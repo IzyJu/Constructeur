@@ -9,7 +9,7 @@ namespace ConsoleApp8
         {
             Building build1 = new Building(3, 10);
             Building build2 = new Building(4);
-            Console.WriteLine(build2.GetSize());
+            Console.WriteLine(build1.GetSize());
             Console.WriteLine(build2.GetFloorMaxSize());
             Console.WriteLine(build2.GetFloorCount());
 
@@ -18,8 +18,9 @@ namespace ConsoleApp8
 
     class Building
     {
-        int _etage;
-        double _sizeBuilding;
+        private int _etage;
+        private double _sizeBuilding;
+        
         public Building(int Etage, double sizeBuilding)
         {
             _etage = Etage;
