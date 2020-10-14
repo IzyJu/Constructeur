@@ -1,0 +1,51 @@
+using System;
+using System.Xml.Schema;
+
+namespace ConsoleApp8
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Building build1 = new Building(3, 10);
+            Building build2 = new Building(4);
+            Console.WriteLine(build2.GetSize());
+            Console.WriteLine(build2.GetFloorMaxSize());
+            Console.WriteLine(build2.GetFloorCount());
+
+        }
+    }
+
+    class Building
+    {
+        int _etage;
+        double _sizeBuilding;
+        public Building(int Etage, double sizeBuilding)
+        {
+            _etage = Etage;
+            _sizeBuilding = sizeBuilding;
+        }
+
+        public Building(int Etage)
+        {
+            _etage = Etage;
+            _sizeBuilding = Etage * 3;
+        }
+
+        public double GetFloorMaxSize()
+        {
+            return _sizeBuilding / _etage;
+        }
+
+        public int GetFloorCount()
+        {
+            return Convert.ToInt32(_sizeBuilding / 3);
+        }
+
+        public double GetSize()
+        {
+            return _sizeBuilding;
+        }
+
+    }    
+}
